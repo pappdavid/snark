@@ -54,6 +54,12 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) and prepare to be humbled.
 
+## Deploying to Vercel
+
+The `vercel.json` file is pre-configured. The `env` values use Vercel's `@secret-name` syntax — these reference secrets stored in your Vercel project dashboard (Settings → Environment Variables). Create a secret for each `@`-prefixed entry before deploying.
+
+For production, swap the SQLite `DATABASE_URL` for a PostgreSQL connection string and change `provider = "sqlite"` to `provider = "postgresql"` in `prisma/schema.prisma`.
+
 ## License
 
 MIT.
