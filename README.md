@@ -15,7 +15,7 @@ Snark is a snarky, cynical AI-powered code review SaaS that integrates with your
 
 ## Tech Stack
 
-- **Frontend**: Next.js 14 (App Router) + TypeScript + Tailwind CSS
+- **Frontend**: Next.js 15 (App Router) + TypeScript + Tailwind CSS
 - **Auth**: NextAuth.js + GitHub OAuth
 - **Database**: Prisma + SQLite (dev) / PostgreSQL (prod)
 - **AI**: OpenAI GPT-4o with a custom cynical system prompt

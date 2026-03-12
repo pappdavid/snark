@@ -7,16 +7,17 @@ import { prisma } from '@/lib/prisma'
 import Link from 'next/link'
 
 interface PageProps {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
 export default async function ReviewPage({ params }: PageProps) {
+  const { id } = await params
   const session = await getServerSession(authOptions)
   if (!session?.user) redirect('/login')
 
   const review = await prisma.review.findFirst({
     where: {
-      id: params.id,
+      id,
       user: { email: session.user.email! },
     },
     include: { repository: true },
